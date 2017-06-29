@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.jcedar.sdahyoruba"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+/*import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+def getDateTime() {
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HHmm")
+    return df.format(new Date())
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "24.0.2"
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId 'com.jcedar.sdahyoruba'
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    dexOptions {
+//        incremental true
+        javaMaxHeapSize "2048M"
+        jumboMode = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //versionNameSuffix System.env.SVN_REVISION + 'build' + System.env.BUILD_NUMBER
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def timee = getDateTime()
+                    def newName = output.outputFile.name
+                    //newName = newName.replace("app-", "SdahYoruba-")
+                    //newName = newName.replace("-debug", '-'+timee)
+                    //output.outputFile = new File(output.outputFile.parent, newName)
+                }
+            }
+        }
+    }
+    productFlavors {
+    }
+}*/
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/gcm.jar')
+    compile files('libs/joda-time-2.7.jar')
+    compile files('libs/butterknife-7.0.1.jar')
+    //testing framework
+    //testCompile "org.robolectric:robolectric:3.0"
+    //    compile 'com.google.android.gms:play-services-auth:8.4.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+//    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.wdullaer:materialdatetimepicker:2.0.2'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.gordonwong:material-sheet-fab:1.2.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.clans:fab:1.6.4'
+    compile 'com.bignerdranch.android:recyclerview-multiselect:0.2'
+}
+
+
+
+
+
+
+apply plugin: 'com.google.gms.google-services'
