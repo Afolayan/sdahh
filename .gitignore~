@@ -53,7 +53,7 @@ captures/
 .idea/libraries
 .idea/misc.xml
 .idea/modules.xml
-.idea/
+
 # Google Services (e.g. APIs or Firebase)
 google-services.json
 
